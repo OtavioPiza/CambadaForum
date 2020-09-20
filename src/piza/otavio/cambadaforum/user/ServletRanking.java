@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import piza.otavio.cambadaforum.DAOLogger;
+
 /**
  * Servlet responsible for getting the top ten users by points
  * 
@@ -34,7 +36,7 @@ public class ServletRanking extends HttpServlet {
 			request.setAttribute("ranking", ranking);
 			
 		} catch (Exception e) {
-			// TODO implement in logger
+			DAOLogger.log(13, (String) request.getSession().getAttribute("login"));
 			request.setAttribute("rankingError", e.getMessage());
 			
 		} finally {

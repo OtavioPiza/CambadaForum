@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import piza.otavio.cambadaforum.DAOLogger;
 import piza.otavio.cambadaforum.topic.TopicDAO;
 import piza.otavio.cambadaforum.topic.comment.CommentDAO;
 import piza.otavio.cambadaforum.user.User;
@@ -44,7 +45,7 @@ public class ServletViewTopic extends HttpServlet {
 			request.getSession().setAttribute("points", user.getPoints());
 			
 		} catch (Exception e1) {
-			// TODO implement in logger
+			DAOLogger.log(15, (String) request.getSession().getAttribute("login"));
 		} // End try-catch block
 		
 		/**

@@ -68,6 +68,18 @@ public class DAOLogger {
 				sb.append("edit topic");
 				break;
 				
+			case 5:
+				sb.append("display topics");
+				break;
+				
+			case 6:
+				sb.append("display user ranking");
+				break;
+				
+			case 7:
+				sb.append("unable to get user");
+				break;
+				
 			default:
 				sb.append("\nFailed to interpret message");
 		}

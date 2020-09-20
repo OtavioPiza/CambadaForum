@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import piza.otavio.cambadaforum.DAOLogger;
 import piza.otavio.cambadaforum.topic.TopicDAO;
 
 /**
@@ -37,7 +38,7 @@ public class ServletTopics extends HttpServlet {
 			request.setAttribute("topics", topics);
 			
 		} catch (Exception e) {
-			// TODO implement in logger
+			DAOLogger.log(11, (String) request.getSession().getAttribute("login"));
 			request.setAttribute("topicsError", e.getMessage());
 			
 		}finally {
