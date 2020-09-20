@@ -1,0 +1,98 @@
+package piza.otavio.cambadaforum;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+/**
+ * Class responsible for logging all database operations
+ * 
+ * @author Otavio Sartorelli de Toledo Piza
+ * @version September 11th 2020
+ */
+public class DAOLogger {
+	
+	private static final String FILEPATH = "logs/database_log.txt"; // Path to the database log
+	// Date format template  
+	private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
+	
+	/**
+	 * Private constructor to hide the implicit public one
+	 */
+	private DAOLogger() {
+	}
+	
+	/**
+	 * Translates an operation to a message with a time stamp
+	 * 
+	 * @param operation code to be interpreted
+	 * @param id from the user that tried to perform the operation
+	 */
+	private static String interpret(int code, String id) {
+		StringBuilder sb = new StringBuilder(); // String that contains the interpreted message
+		
+		sb.append("\n-=-=-= ").append(DTF.format(LocalDateTime.now())).append(" =-=-=-");
+		sb.append('\n').append((code % 2 == 0) ? "Successful" : "Failed").append(" attempt to ");
+		code /= 2;
+		
+		switch(code) {
+		case 0:
+			sb.append("register");
+			break;
+		case 1: 
+			
+		}
+		
+//		sb.append(switch(code) {
+//			case 0 -> "register";
+//			case 1 -> "login";
+//			case 2 -> "create new topic";
+//			case 3 -> "post new comment";
+//			default -> "\nFailed to interpret message";
+//			} // End switch expression
+//		);
+		
+		sb.append('\n').append("by: ").append(id);
+		sb.append('\n').append("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-").append('\n');
+		return sb.toString();
+	} // End interpret()
+	
+	/**
+	 * Logs to a system file a message of the operations performed on the forum's database
+	 * 
+	 * @param code
+	 * @param user_id
+	 */
+	public static void log(int code, String id) {
+		write(interpret(code, id));
+	} // End constructor
+	
+	/**
+	 * Writes a message to the FILEPATH file
+	 * 
+	 * @param message to be logged in a system file
+	 */
+	private static void write(String message) {
+		File log = new File(FILEPATH); // File for the database log
+		boolean isNew = false;         // Stores if the file created is a new or an old one
+		
+		try {
+			if (!log.exists()) {
+				isNew = log.createNewFile();
+			} // End if
+			PrintWriter pw = new PrintWriter(new FileWriter(log, true));
+			
+			if (Boolean.TRUE.equals(isNew)) {
+				pw.append("Database operations log:");
+			} // End if
+			pw.append(message);
+			pw.close();
+
+		} catch (IOException e) {
+			e.printStackTrace();
+		} // End try-catch block
+	} // End write()
+} // End DAOLogger
