@@ -15,9 +15,18 @@ import java.time.format.DateTimeFormatter;
  */
 public class DAOLogger {
 	
-	private static final String FILEPATH = "logs/database_log.txt"; // Path to the database log
+	private static String filePath = "C:/Users/otavi/Desktop/database_log.txt"; // Path to the database log
 	// Date format template  
 	private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
+	
+	/**
+	 * Set the path where the log is going to be saved
+	 * 
+	 * @param path to the log
+	 */
+	public static void setPath(String path) {
+		filePath = path;
+	} // End setPath(...)
 	
 	/**
 	 * Private constructor to hide the implicit public one
@@ -84,7 +93,7 @@ public class DAOLogger {
 	 * @param message to be logged in a system file
 	 */
 	private static void write(String message) {
-		File log = new File(FILEPATH); // File for the database log
+		File log = new File(filePath); // File for the database log
 		boolean isNew = false;         // Stores if the file created is a new or an old one
 		
 		try {
