@@ -46,14 +46,26 @@ public class DAOLogger {
 			
 		}
 		
-//		sb.append(switch(code) {
-//			case 0 -> "register";
-//			case 1 -> "login";
-//			case 2 -> "create new topic";
-//			case 3 -> "post new comment";
-//			default -> "\nFailed to interpret message";
-//			} // End switch expression
-//		);
+		switch(code) {
+			case 0:
+				sb.append("regiters");
+				break;
+				
+			case 1:
+				sb.append("login");
+				break;
+				
+			case 2:
+				sb.append("create new topic");
+				break;
+				
+			case 3:
+				sb.append("post new comment");
+				break;
+				
+			default:
+				sb.append("\nFailed to interpret message");
+		}
 		
 		sb.append('\n').append("by: ").append(id);
 		sb.append('\n').append("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-").append('\n');
