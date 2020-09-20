@@ -1,0 +1,5 @@
+Database operations log:
+-=-=-= 2020/09/20 17:11:14 =-=-=-
+Successful attempt to login
+by: oi
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
