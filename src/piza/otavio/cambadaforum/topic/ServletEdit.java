@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import piza.otavio.cambadaforum.DAOLogger;
+
 /**
  * Servlet responsible for editing the topic in the database
  * 
@@ -35,6 +37,7 @@ public class ServletEdit extends HttpServlet {
 			TopicDAO.editTopic(topic);
 			
 		} catch (Exception e) {
+			DAOLogger.log(9, (String) request.getSession().getAttribute("login"));
 		
 		} // End try-catch block
 		response.sendRedirect("view_topic?topic_id=" + topicId);

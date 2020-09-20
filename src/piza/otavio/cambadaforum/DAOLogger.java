@@ -48,7 +48,7 @@ public class DAOLogger {
 		
 		switch(code) {
 			case 0:
-				sb.append("regiters");
+				sb.append("register");
 				break;
 				
 			case 1:
@@ -61,6 +61,10 @@ public class DAOLogger {
 				
 			case 3:
 				sb.append("post new comment");
+				break;
+				
+			case 4:
+				sb.append("edit topic");
 				break;
 				
 			default:
