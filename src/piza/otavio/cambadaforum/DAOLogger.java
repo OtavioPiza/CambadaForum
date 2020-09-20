@@ -39,14 +39,6 @@ public class DAOLogger {
 		code /= 2;
 		
 		switch(code) {
-		case 0:
-			sb.append("register");
-			break;
-		case 1: 
-			
-		}
-		
-		switch(code) {
 			case 0:
 				sb.append("register");
 				break;

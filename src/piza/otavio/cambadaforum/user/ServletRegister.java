@@ -1,11 +1,16 @@
 package piza.otavio.cambadaforum.user;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
+
+import piza.otavio.cambadaforum.DAOLogger;
 
 /**
  * Servlet responsible for registering a new user
@@ -37,10 +42,12 @@ public class ServletRegister extends HttpServlet {
 			user.setName(request.getParameter("name"));
 			user.setPassword(request.getParameter("password"));
 			UserDAO.register(user);
+			DAOLogger.log(0, request.getParameter("login"));
 			response.sendRedirect("login?status=You have successfully registered!" 
 					+ " Now you can make your login.");
 
 		} catch (Exception e) {
+			DAOLogger.log(1, request.getParameter("login"));
 			response.sendRedirect("register?status=" + e.getMessage());
 		} // End try-catch block
 	} // End doPost(...)

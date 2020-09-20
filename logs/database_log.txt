@@ -1,15 +1,10 @@
-Database operations log:
--=-=-= 2020/09/20 17:11:14 =-=-=-
-Successful attempt to login
-by: oi
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
--=-=-= 2020/09/20 18:43:10 =-=-=-
-Successful attempt to login
-by: oi
--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
-
--=-=-= 2020/09/20 18:47:18 =-=-=-
+-=-=-= 2020/09/20 19:27:54 =-=-=-
 Failed attempt to edit topic
-by: Euzinho
+by: otavio.piza
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+-=-=-= 2020/09/20 19:29:45 =-=-=-
+Successful attempt to register
+by: luisa.tucci
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-

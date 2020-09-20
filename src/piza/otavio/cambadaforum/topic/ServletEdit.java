@@ -35,6 +35,7 @@ public class ServletEdit extends HttpServlet {
 		
 		try {
 			TopicDAO.editTopic(topic);
+			DAOLogger.log(8, (String) request.getSession().getAttribute("login"));
 			
 		} catch (Exception e) {
 			DAOLogger.log(9, (String) request.getSession().getAttribute("login"));

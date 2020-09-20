@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import piza.otavio.cambadaforum.DAOLogger;
+
 /**
  * Servlet responsible for creating a new comment in the database
  * 
@@ -35,10 +37,11 @@ public class ServletWriteComment extends HttpServlet {
 		try {
 			CommentDAO.createComment(comment);
 			status = "&status=Comment+added+successfully";
+			DAOLogger.log(6, (String) request.getSession().getAttribute("login"));
 			
 		} catch (Exception e) {
 			request.setAttribute("commentsError", e.getMessage());
-			e.printStackTrace();
+			DAOLogger.log(7, (String) request.getSession().getAttribute("login"));
 			
 		} finally {
 			response.sendRedirect("/CambadaForum/view_topic?topic_id="

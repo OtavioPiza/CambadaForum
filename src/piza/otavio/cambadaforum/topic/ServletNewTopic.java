@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import piza.otavio.cambadaforum.DAOLogger;
+
 /**
  * Servlet responsible for creating a new topic in the database
  * 
@@ -36,8 +38,10 @@ public class ServletNewTopic extends HttpServlet {
 		try {
 			TopicDAO.createTopic(topic);
 			response.sendRedirect("/CambadaForum/main?status=Topic+created+successfully");
+			DAOLogger.log(4, (String) request.getSession().getAttribute("login"));
 			
 		} catch (Exception e) {
+			DAOLogger.log(5, (String) request.getSession().getAttribute("login"));
 			request.setAttribute("newTopicError", e.getMessage());
 			request.getRequestDispatcher("new_topic.jsp").forward(request, response);
 		} // End try-catch

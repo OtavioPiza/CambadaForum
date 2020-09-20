@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import piza.otavio.cambadaforum.DAOLogger;
+
 /**
  * Servlet responsible for doing the login of an user
  * 
@@ -36,9 +38,11 @@ public class ServletDoLogin extends HttpServlet {
 			request.getSession().setAttribute("name", user.getName());
 			request.getSession().setAttribute("points", user.getPoints());
 			request.getSession().setAttribute("loged", "true");
+			DAOLogger.log(2, request.getParameter("login"));
 			response.sendRedirect("main");
 			
 		} catch (Exception e) {
+			DAOLogger.log(3, request.getParameter("login"));
 			response.sendRedirect("login?status=" + e.getMessage());
 		} // End try-catch block
 	} // End doPost(...)
