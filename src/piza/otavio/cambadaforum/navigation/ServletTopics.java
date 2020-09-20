@@ -37,7 +37,7 @@ public class ServletTopics extends HttpServlet {
 			request.setAttribute("topics", topics);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO implement in logger
 			request.setAttribute("topicsError", e.getMessage());
 			
 		}finally {

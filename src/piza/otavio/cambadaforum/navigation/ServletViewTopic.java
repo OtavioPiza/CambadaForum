@@ -44,7 +44,7 @@ public class ServletViewTopic extends HttpServlet {
 			request.getSession().setAttribute("points", user.getPoints());
 			
 		} catch (Exception e1) {
-			e1.printStackTrace();
+			// TODO implement in logger
 		} // End try-catch block
 		
 		/**

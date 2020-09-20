@@ -49,7 +49,7 @@ public class ServletMain extends HttpServlet {
 			request.setAttribute("userTopics", userTopics);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO implement in logger
 			request.setAttribute("userTopicsError", e.getMessage());
 			
 		}finally {

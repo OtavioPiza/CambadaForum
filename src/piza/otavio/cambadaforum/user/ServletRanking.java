@@ -34,7 +34,7 @@ public class ServletRanking extends HttpServlet {
 			request.setAttribute("ranking", ranking);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
+			// TODO implement in logger
 			request.setAttribute("rankingError", e.getMessage());
 			
 		} finally {
