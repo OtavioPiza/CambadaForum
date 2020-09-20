@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter;
  * Class responsible for logging all database operations
  * 
  * @author Otavio Sartorelli de Toledo Piza
- * @version September 11th 2020
+ * @version 2020
  */
 public class DAOLogger {
 	
