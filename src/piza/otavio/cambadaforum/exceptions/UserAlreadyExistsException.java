@@ -6,7 +6,7 @@ package piza.otavio.cambadaforum.exceptions;
  * @author Otavio Sartorelli de Toledo Piza
  * @version 2020-09-21
  */
-public class UserNotFoundException extends CambadaForumException {
+public class UserAlreadyExistsException extends CambadaForumException {
 	private static final long serialVersionUID = 1L; // Version UID
 	
 	/**
@@ -14,7 +14,7 @@ public class UserNotFoundException extends CambadaForumException {
 	 * 
 	 * @param message that will be part of the exception
 	 */
-	public UserNotFoundException(String message) {
+	public UserAlreadyExistsException(String message) {
 		super(message);
-	} // End UserNotFoundException()
-} // End UserNotFoundException
+	} // End UserAlreadyExistsException()
+} // End UserAlreadyExistsException
