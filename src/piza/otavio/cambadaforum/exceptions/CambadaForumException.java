@@ -18,4 +18,14 @@ public class CambadaForumException extends Exception{
 	CambadaForumException(String message) {
 		this.message = message;
 	} // CambadaForumException(...)
+	
+	/**
+	 * Gets the message from the exception
+	 * 
+	 * @return the message from the exception
+	 */
+	@Override
+	public String getMessage() {
+		return message;
+	}
 } // CambadaForumException
