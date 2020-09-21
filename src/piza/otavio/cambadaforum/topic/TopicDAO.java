@@ -89,7 +89,7 @@ public class TopicDAO extends DAO {
 			return topic;
 			
 		} catch (Exception e) {
-			throw new Exception("Unable to get user's topics!");
+			throw new Exception("Unable to get topic!");
 		} // End try-catch block
 	} // End getTopicTopic(...)
 	
