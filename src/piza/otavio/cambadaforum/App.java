@@ -15,6 +15,6 @@ public class App {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		DAOLogger.log(2,"oi");
+		DAOLogger.log(0, "luisa.tucci");
 	} // End main
 } // End App

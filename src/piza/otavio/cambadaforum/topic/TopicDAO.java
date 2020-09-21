@@ -40,7 +40,6 @@ public class TopicDAO extends DAO {
 			UserDAO.addPoints(topic.getLogin(), 30);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("Unable to create new topic!");
 		} // End try-catch block
 	} // End createTopic(...)
@@ -61,7 +60,6 @@ public class TopicDAO extends DAO {
 			stm.executeUpdate();
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new Exception("Unable to edit topic!");
 		} // End try-catch block
 	} // End editTopic(...)
@@ -91,7 +89,6 @@ public class TopicDAO extends DAO {
 			return topic;
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("Unable to get user's topics!");
 		} // End try-catch block
 	} // End getTopicTopic(...)
@@ -122,7 +119,6 @@ public class TopicDAO extends DAO {
 			return topics;
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("Unable to get forum's topics!");
 		} // End try-catch block
 	} // End getTopics(...)
@@ -154,7 +150,6 @@ public class TopicDAO extends DAO {
 			return userTopics;
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("Unable to get user's topics!");
 		} // End try-catch block
 	} // End getUserTopics
@@ -169,7 +164,7 @@ public class TopicDAO extends DAO {
 			stm.executeUpdate();
 	
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("Unable to reset topics: " + e.getMessage());
 		} // End try-catch block
 	} // End resetTopics()
 } // End TopicDAO

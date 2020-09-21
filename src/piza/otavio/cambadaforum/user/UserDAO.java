@@ -37,7 +37,6 @@ public class UserDAO extends DAO {
 			stm.executeUpdate();
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("User not found");
 		} // End try-catch block
 	} // End addPoints(...)
@@ -47,7 +46,7 @@ public class UserDAO extends DAO {
 	 * 
 	 * @param login of the user
 	 * @return User object with the given login
-	 * @throws Exception if the operation on the database was unsuccessfull
+	 * @throws Exception if the operation on the database was unsuccessful
 	 */
 	public static User getUser(String login) throws Exception {
 
@@ -66,7 +65,6 @@ public class UserDAO extends DAO {
 				
 			return user;
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("User not found");
 		} // End try-catch block
 	} // End getUser(...)
@@ -96,7 +94,6 @@ public class UserDAO extends DAO {
 			} // End while
 			return ranking;
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("There was an error loading the users! Please try again later");
 		} // End try-catch
 	} // End getUserRanking()
@@ -155,7 +152,6 @@ public class UserDAO extends DAO {
 			stm.executeUpdate();
 			
 		} catch (SQLException e) {
-			e.printStackTrace();
 			throw new Exception("This login is already registered!");
 		} // End try-catch block
 	} // End register(...)
@@ -170,7 +166,7 @@ public class UserDAO extends DAO {
 			stm.executeUpdate();
 	
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("Unable to reset users: " + e.getMessage());
 		} // End try-catch block
 	} // End resetUsers()
 } // EndUserDAO

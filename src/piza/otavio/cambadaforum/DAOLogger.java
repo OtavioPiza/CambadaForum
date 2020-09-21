@@ -15,9 +15,18 @@ import java.time.format.DateTimeFormatter;
  */
 public class DAOLogger {
 	
-	private static final String FILEPATH = "logs/database_log.txt"; // Path to the database log
+	private static String filePath = "C:/Users/otavi/Desktop/database_log.txt"; // Path to the database log
 	// Date format template  
 	private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
+	
+	/**
+	 * Set the path where the log is going to be saved
+	 * 
+	 * @param path to the log
+	 */
+	public static void setPath(String path) {
+		filePath = path;
+	} // End setPath(...)
 	
 	/**
 	 * Private constructor to hide the implicit public one
@@ -39,16 +48,8 @@ public class DAOLogger {
 		code /= 2;
 		
 		switch(code) {
-		case 0:
-			sb.append("register");
-			break;
-		case 1: 
-			
-		}
-		
-		switch(code) {
 			case 0:
-				sb.append("regiters");
+				sb.append("register");
 				break;
 				
 			case 1:
@@ -61,6 +62,22 @@ public class DAOLogger {
 				
 			case 3:
 				sb.append("post new comment");
+				break;
+				
+			case 4:
+				sb.append("edit topic");
+				break;
+				
+			case 5:
+				sb.append("display topics");
+				break;
+				
+			case 6:
+				sb.append("display user ranking");
+				break;
+				
+			case 7:
+				sb.append("unable to get user");
 				break;
 				
 			default:
@@ -88,7 +105,7 @@ public class DAOLogger {
 	 * @param message to be logged in a system file
 	 */
 	private static void write(String message) {
-		File log = new File(FILEPATH); // File for the database log
+		File log = new File(filePath); // File for the database log
 		boolean isNew = false;         // Stores if the file created is a new or an old one
 		
 		try {

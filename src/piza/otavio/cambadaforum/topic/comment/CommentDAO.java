@@ -41,7 +41,6 @@ public class CommentDAO extends DAO {
 			UserDAO.addPoints(comment.getLogin(), 10);
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("Unable to write comment");
 		} // End try-catch block
 	} // End createComment(...)
@@ -71,7 +70,6 @@ public class CommentDAO extends DAO {
 			return comments;
 			
 		} catch (Exception e) {
-			e.printStackTrace();
 			throw new Exception("Unable to get topic's comments!");
 		} // End try-catch block
 	} // End getComments(...)
@@ -86,7 +84,7 @@ public class CommentDAO extends DAO {
 			stm.executeUpdate();
 	
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("Unable to reset comments: " + e.getMessage());
 		} // End try-catch block
 	} // End resetComments()
 } // End CommentDAO
