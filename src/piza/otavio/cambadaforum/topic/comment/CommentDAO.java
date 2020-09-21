@@ -1,4 +1,4 @@
-	package piza.otavio.cambadaforum.topic.comment;
+package piza.otavio.cambadaforum.topic.comment;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
