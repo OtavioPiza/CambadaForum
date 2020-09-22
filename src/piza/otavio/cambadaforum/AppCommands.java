@@ -10,9 +10,10 @@ package piza.otavio.cambadaforum;
  * @version 2020-09-20
  */
 public enum AppCommands {
-	CONFIGUREDATABASE("config", "configures the postgresql database"), 
-	RESETDATABASE("reset", "resets the postgresql database"),
-	QUIT("quit", "closes the program");
+	CONFIGUREDATABASE("config", "configures the postgresql database"),
+	HELP("help", "displays all available commands"),
+	QUIT("quit", "closes the program"),
+	RESETDATABASE("reset", "resets the postgresql database");
 	
 	private String command;
 	private String description;
