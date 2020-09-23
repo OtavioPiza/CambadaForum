@@ -28,4 +28,4 @@ public enum AppCommands {
 	public String getDescription() {
 		return description;
 	}
-}
+} // End AppCommands
