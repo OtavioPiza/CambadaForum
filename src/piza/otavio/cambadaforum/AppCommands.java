@@ -1,6 +1,3 @@
-/**
- * 
- */
 package piza.otavio.cambadaforum;
 
 /**
