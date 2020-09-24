@@ -3,7 +3,7 @@ package piza.otavio.cambadaforum;
 import java.util.Scanner;
 
 /**
- * Only class that has a main method used to run code
+ * Program that allows the user to control the forums settings
  * 
  * @author Otavio Sartorelli de Toledo Piza
  * @version September 13th 2020
@@ -14,7 +14,6 @@ public class App {
 	 * Main method
 	 * 
 	 * @param args
-	 * @throws Exception 
 	 */
 	public static void main(String[] args) {
 		AppCommands[] commands = AppCommands.values();
@@ -73,6 +72,7 @@ public class App {
 						if (sc.nextLine().contentEquals(DAO.sqlPassword)) {
 							DAO.setUp();
 							System.out.println("Done!\n");
+							
 						} else {
 							System.out.println("You entered and invalid password");
 						} // End if
