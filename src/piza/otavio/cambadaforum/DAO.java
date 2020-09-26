@@ -25,7 +25,7 @@ public class DAO {
 	 * Protected class constructor to hide the implicit public one
 	 */
 	protected DAO () {
-	}
+	} // DAO
 	
 	/**
 	 * Method that creates the necessary tables on the postgreSQL's server to enable the web forum 
@@ -116,8 +116,8 @@ public class DAO {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-		} // End try-catch block
-	} // End createTables ()
+		} // try-catch block
+	} // createTables ()
 	
 	/**
 	 * Method responsible for reseting the database to a default state
@@ -128,5 +128,5 @@ public class DAO {
 		CommentDAO.resetComments();
 		TopicDAO.resetTopics();
 		UserDAO.resetUsers();
-	} // End setUp()
-} // End DAO
+	} // setUp()
+} // DAO

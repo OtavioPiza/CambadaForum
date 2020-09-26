@@ -27,5 +27,5 @@ public class ServletLogin extends HttpServlet {
 			throws ServletException, IOException {
 		request.setAttribute("status", request.getParameter("status"));
 		request.getRequestDispatcher("login.jsp").forward(request, response);
-	} // End doGet()
-} // End ServletLogin
+	} // doGet()
+} // ServletLogin

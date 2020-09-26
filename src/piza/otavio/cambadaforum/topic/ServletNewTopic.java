@@ -44,6 +44,6 @@ public class ServletNewTopic extends HttpServlet {
 			DAOLogger.log(5, (String) request.getSession().getAttribute("login"));
 			request.setAttribute("newTopicError", e.getMessage());
 			request.getRequestDispatcher("new_topic.jsp").forward(request, response);
-		} // End try-catch
-	} // End doPost()
-} // End ServletNewTopic
+		} // try-catch
+	} // doPost()
+} // ServletNewTopic

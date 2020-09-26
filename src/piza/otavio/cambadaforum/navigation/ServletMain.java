@@ -55,6 +55,6 @@ public class ServletMain extends HttpServlet {
 			
 		}finally {
 			request.getRequestDispatcher("main.jsp").forward(request, response);
-		} // End try-catch block
-	} // End doGet()
-} // End ServletMain
+		} // try-catch block
+	} // doGet()
+} // ServletMain

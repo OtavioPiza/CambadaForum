@@ -43,6 +43,6 @@ public class ServletTopics extends HttpServlet {
 			
 		}finally {
 			request.getRequestDispatcher("topics.jsp").forward(request, response);
-		} // End try-catch block
-	} // End doGet()
-} // End ServletTopics
+		} // try-catch block
+	} // doGet()
+} // ServletTopics

@@ -27,5 +27,5 @@ public class ServletRegister extends HttpServlet {
 			throws ServletException, IOException {
 		request.setAttribute("status", request.getParameter("status"));
 		request.getRequestDispatcher("register.jsp").forward(request, response);
-	} // End doGet()
-} // End ServletRegister
+	} // doGet()
+} // ServletRegister

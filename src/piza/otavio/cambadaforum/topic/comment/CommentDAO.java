@@ -42,8 +42,8 @@ public class CommentDAO extends DAO {
 			
 		} catch (Exception e) {
 			throw new Exception("Unable to write comment");
-		} // End try-catch block
-	} // End createComment(...)
+		} // try-catch block
+	} // createComment(...)
 	
 	/**
 	 * Method responsible for obtaining a list containing all comments of a given topic
@@ -71,8 +71,8 @@ public class CommentDAO extends DAO {
 			
 		} catch (Exception e) {
 			throw new Exception("Unable to get topic's comments!");
-		} // End try-catch block
-	} // End getComments(...)
+		} // try-catch block
+	} // getComments(...)
 	
 	/**
 	 * Method that resets all the comments on the database
@@ -85,6 +85,6 @@ public class CommentDAO extends DAO {
 	
 		} catch (SQLException e) {
 			System.out.println("Unable to reset comments: " + e.getMessage());
-		} // End try-catch block
-	} // End resetComments()
-} // End CommentDAO
+		} // try-catch block
+	} // resetComments()
+} // CommentDAO

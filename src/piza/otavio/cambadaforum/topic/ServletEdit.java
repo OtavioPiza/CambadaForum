@@ -40,7 +40,7 @@ public class ServletEdit extends HttpServlet {
 		} catch (Exception e) {
 			DAOLogger.log(9, (String) request.getSession().getAttribute("login"));
 		
-		} // End try-catch block
+		} // try-catch block
 		response.sendRedirect("view_topic?topic_id=" + topicId);
-	} // End doPost()
-} // End ServletEdit
+	} // doPost()
+} // ServletEdit

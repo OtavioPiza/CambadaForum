@@ -16,5 +16,5 @@ public class UnableToGetCommentException extends CambadaForumException {
 	 */
 	public UnableToGetCommentException(String message) {
 		super(message);
-	} // End UnableToGetCommentException()
-} // End UnableToGetCommentException
+	} // UnableToGetCommentException()
+} // UnableToGetCommentException

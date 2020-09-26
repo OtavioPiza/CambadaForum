@@ -16,5 +16,5 @@ public class LoginOrPasswordException extends CambadaForumException {
 	 */
 	public LoginOrPasswordException(String message) {
 		super(message);
-	} // End LoginOrPasswordException()
-} // End LoginOrPasswordException
+	} // LoginOrPasswordException()
+} // LoginOrPasswordException

@@ -46,7 +46,7 @@ public class ServletViewTopic extends HttpServlet {
 			
 		} catch (Exception e1) {
 			DAOLogger.log(15, (String) request.getSession().getAttribute("login"));
-		} // End try-catch block
+		} // try-catch block
 		
 		/**
 		 * Section responsible for getting the topic's content
@@ -62,7 +62,7 @@ public class ServletViewTopic extends HttpServlet {
 			
 		} catch (Exception e) {
 			request.setAttribute("topicError", e.getMessage());
-		} // End try-catch block
+		} // try-catch block
 		
 		
 		/**
@@ -81,6 +81,6 @@ public class ServletViewTopic extends HttpServlet {
 			
 		} finally {
 			request.getRequestDispatcher("view_topic.jsp").forward(request, response);
-		} // End try-catch block
-	} // End doGet()
-} // End ServletViewTopic
+		} // try-catch block
+	} // doGet()
+} // ServletViewTopic

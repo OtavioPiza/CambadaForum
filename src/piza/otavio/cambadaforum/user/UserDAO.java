@@ -38,8 +38,8 @@ public class UserDAO extends DAO {
 			
 		} catch (Exception e) {
 			throw new Exception("User not found");
-		} // End try-catch block
-	} // End addPoints(...)
+		} // try-catch block
+	} // addPoints(...)
 	
 	/**
 	 * Method responsible for getting a user with a given login
@@ -66,8 +66,8 @@ public class UserDAO extends DAO {
 			return user;
 		} catch (Exception e) {
 			throw new Exception("User not found");
-		} // End try-catch block
-	} // End getUser(...)
+		} // try-catch block
+	} // getUser(...)
 	
 	/**
 	 * Method responsible for getting the top ten users with the most points
@@ -95,8 +95,8 @@ public class UserDAO extends DAO {
 			return ranking;
 		} catch (Exception e) {
 			throw new Exception("There was an error loading the users! Please try again later");
-		} // End try-catch
-	} // End getUserRanking()
+		} // try-catch
+	} // getUserRanking()
 	
 	/**
 	 * Method responsible for logging a user in
@@ -126,9 +126,9 @@ public class UserDAO extends DAO {
 				return user;
 			} else {
 				throw new Exception("Login/Password incorrect");
-			} // End if
-		} // End try-catch
-	} // End login(...)
+			} // if
+		} // try-catch
+	} // login(...)
 	
 	/**
 	 * Method responsible for registering a new user to the database
@@ -153,8 +153,8 @@ public class UserDAO extends DAO {
 			
 		} catch (SQLException e) {
 			throw new Exception("This login is already registered!");
-		} // End try-catch block
-	} // End register(...)
+		} // try-catch block
+	} // register(...)
 	
 	/**
 	 * Method that resets all users in the database
@@ -167,6 +167,6 @@ public class UserDAO extends DAO {
 	
 		} catch (SQLException e) {
 			System.out.println("Unable to reset users: " + e.getMessage());
-		} // End try-catch block
-	} // End resetUsers()
-} // EndUserDAO
+		} // try-catch block
+	} // resetUsers()
+} // UserDAO

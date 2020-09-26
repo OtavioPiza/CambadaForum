@@ -16,5 +16,5 @@ public class UserAlreadyExistsException extends CambadaForumException {
 	 */
 	public UserAlreadyExistsException(String message) {
 		super(message);
-	} // End UserAlreadyExistsException()
-} // End UserAlreadyExistsException
+	} // UserAlreadyExistsException()
+} // UserAlreadyExistsException

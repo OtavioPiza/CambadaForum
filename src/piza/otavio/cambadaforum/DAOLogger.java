@@ -26,7 +26,7 @@ public class DAOLogger {
 	 */
 	public static void setPath(String path) {
 		filePath = path;
-	} // End setPath(...)
+	} // setPath(...)
 	
 	/**
 	 * Private constructor to hide the implicit public one
@@ -87,7 +87,7 @@ public class DAOLogger {
 		sb.append('\n').append("by: ").append(id);
 		sb.append('\n').append("-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-").append('\n');
 		return sb.toString();
-	} // End interpret()
+	} // interpret()
 	
 	/**
 	 * Logs to a system file a message of the operations performed on the forum's database
@@ -97,7 +97,7 @@ public class DAOLogger {
 	 */
 	public static void log(int code, String id) {
 		write(interpret(code, id));
-	} // End constructor
+	} // constructor
 	
 	/**
 	 * Writes a message to the FILEPATH file
@@ -122,6 +122,6 @@ public class DAOLogger {
 
 		} catch (IOException e) {
 			e.printStackTrace();
-		} // End try-catch block
-	} // End write()
-} // End DAOLogger
+		} // try-catch block
+	} // write()
+} // DAOLogger

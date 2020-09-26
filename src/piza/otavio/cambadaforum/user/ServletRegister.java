@@ -49,6 +49,6 @@ public class ServletRegister extends HttpServlet {
 		} catch (Exception e) {
 			DAOLogger.log(1, request.getParameter("login"));
 			response.sendRedirect("register?status=" + e.getMessage());
-		} // End try-catch block
-	} // End doPost(...)
-} // End ServletRegister
+		} // try-catch block
+	} // doPost(...)
+} // ServletRegister

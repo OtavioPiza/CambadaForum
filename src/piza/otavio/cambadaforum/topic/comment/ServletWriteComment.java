@@ -46,6 +46,6 @@ public class ServletWriteComment extends HttpServlet {
 		} finally {
 			response.sendRedirect("/CambadaForum/view_topic?topic_id="
 					+ request.getParameter("topic_id") + status);
-		} // End try-catch block
-	} // End doPost(...)
-} // End ServletWriteComment
+		} // try-catch block
+	} // doPost(...)
+} // ServletWriteComment

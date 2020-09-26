@@ -16,5 +16,5 @@ public class UnableToWriteCommentException extends CambadaForumException {
 	 */
 	public UnableToWriteCommentException(String message) {
 		super(message);
-	} // End UnableToWriteCommentException()
-} // End UnableToWriteCommentException
+	} // UnableToWriteCommentException()
+} // UnableToWriteCommentException

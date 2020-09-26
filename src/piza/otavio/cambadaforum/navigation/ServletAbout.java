@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/about")
 public class ServletAbout extends HttpServlet {
 	private static final long serialVersionUID = 1L; // Version UID
-       
+
 	/**
 	 * Get method that displays the about.jsp page to the user
 	 * 
@@ -26,5 +26,5 @@ public class ServletAbout extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		request.getRequestDispatcher("/about.jsp").forward(request, response);
-	} // End doGet()
-} // End ServletAbout
+	} // doGet()
+} // ServletAbout

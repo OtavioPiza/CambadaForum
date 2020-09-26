@@ -22,7 +22,7 @@ import piza.otavio.cambadaforum.topic.TopicDAO;
 @WebServlet("/edit")
 public class ServletEdit extends HttpServlet {
 	private static final long serialVersionUID = 1L; // Version UID
-    
+
 	/**
 	 * Get method that displays the edit_topic.jsp page to the user if they are the owner of that 
 	 * topic in particular, if they are not, they are redirected to their main page and are told why
@@ -56,6 +56,6 @@ public class ServletEdit extends HttpServlet {
 		
 		} finally {
 			request.getRequestDispatcher("edit_topic.jsp").forward(request, response);
-		}// End try-catch block
-	} // End doGet()
-} // End ServletEdit
+		} // try-catch block
+	} // doGet()
+} // ServletEdit

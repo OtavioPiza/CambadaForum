@@ -41,8 +41,8 @@ public class TopicDAO extends DAO {
 			
 		} catch (Exception e) {
 			throw new Exception("Unable to create new topic!");
-		} // End try-catch block
-	} // End createTopic(...)
+		} // try-catch block
+	} // createTopic(...)
 
 	/**
 	 * Method responsible for updating the edits to a topic in the database
@@ -61,8 +61,8 @@ public class TopicDAO extends DAO {
 			
 		} catch (SQLException e) {
 			throw new Exception("Unable to edit topic!");
-		} // End try-catch block
-	} // End editTopic(...)
+		} // try-catch block
+	} // editTopic(...)
 	
 	/**
 	 * Method responsible for getting a topic's content
@@ -90,8 +90,8 @@ public class TopicDAO extends DAO {
 			
 		} catch (Exception e) {
 			throw new Exception("Unable to get topic!");
-		} // End try-catch block
-	} // End getTopicTopic(...)
+		} // try-catch block
+	} // getTopicTopic(...)
 	
 	/**
 	 * Method responsible for obtaining all topics in the database
@@ -120,8 +120,8 @@ public class TopicDAO extends DAO {
 			
 		} catch (Exception e) {
 			throw new Exception("Unable to get forum's topics!");
-		} // End try-catch block
-	} // End getTopics(...)
+		} // try-catch block
+	} // getTopics(...)
 	
 	/**
 	 * Method responsible for obtaining all the topics of a given user
@@ -151,8 +151,8 @@ public class TopicDAO extends DAO {
 			
 		} catch (Exception e) {
 			throw new Exception("Unable to get user's topics!");
-		} // End try-catch block
-	} // End getUserTopics
+		} // try-catch block
+	} // getUserTopics
 	
 	/**
 	 * Method responsible for deleting all topics in the database
@@ -165,6 +165,6 @@ public class TopicDAO extends DAO {
 	
 		} catch (SQLException e) {
 			System.out.println("Unable to reset topics: " + e.getMessage());
-		} // End try-catch block
-	} // End resetTopics()
-} // End TopicDAO
+		} // try-catch block
+	} // resetTopics()
+} // TopicDAO
