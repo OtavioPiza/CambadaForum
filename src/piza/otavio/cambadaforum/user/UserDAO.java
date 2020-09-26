@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import piza.otavio.cambadaforum.DAO;
+import piza.otavio.cambadaforum.exceptions.LoginOrPasswordException;
+import piza.otavio.cambadaforum.exceptions.UserAlreadyExistsException;
+import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
 
 /**
  * Child of the DAO class responsible for the access and manipulation of the users topics on the
@@ -26,7 +29,7 @@ public class UserDAO extends DAO {
 	 * @param points to be added
 	 * @throws Exception if the operation on the database was unsuccessful
 	 */
-	public static void addPoints(String login, int points) throws Exception {
+	public static void addPoints(String login, int points) throws UserNotFoundException {
 
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			
@@ -36,19 +39,19 @@ public class UserDAO extends DAO {
 			stm.setInt(1, points);
 			stm.executeUpdate();
 			
-		} catch (Exception e) {
-			throw new Exception("User not found");
+		} catch (SQLException e) {
+			throw new UserNotFoundException("User not found");
 		} // try-catch block
-	} // addPoints(...)
+	} // addPoints()
 	
 	/**
 	 * Method responsible for getting a user with a given login
 	 * 
 	 * @param login of the user
 	 * @return User object with the given login
-	 * @throws Exception if the operation on the database was unsuccessful
+	 * @throws UserNotFoundException if the operation on the database was unsuccessful
 	 */
-	public static User getUser(String login) throws Exception {
+	public static User getUser(String login) throws UserNotFoundException {
 
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement("SELECT * FROM users WHERE login = ?;");
@@ -64,18 +67,18 @@ public class UserDAO extends DAO {
 			user.setPoints(Integer.parseInt(rs.getString("points")));
 				
 			return user;
-		} catch (Exception e) {
-			throw new Exception("User not found");
+		} catch (SQLException e) {
+			throw new UserNotFoundException("User not found");
 		} // try-catch block
-	} // getUser(...)
+	} // getUser()
 	
 	/**
 	 * Method responsible for getting the top ten users with the most points
 	 * 
 	 * @return a list with the login of the top ten users of the form by points
-	 * @throws Exception if the operation on the database
+	 * @throws UserNotFoundException if the operation on the database
 	 */
-	public static List<String> getUserRanking() throws Exception {
+	public static List<String> getUserRanking() throws UserNotFoundException {
 
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -93,8 +96,9 @@ public class UserDAO extends DAO {
 				position++;
 			} // End while
 			return ranking;
-		} catch (Exception e) {
-			throw new Exception("There was an error loading the users! Please try again later");
+		} catch (SQLException e) {
+			throw new UserNotFoundException(
+					"There was an error loading the users! Please try again later");
 		} // try-catch
 	} // getUserRanking()
 	
@@ -104,10 +108,10 @@ public class UserDAO extends DAO {
 	 * @param login of the user
 	 * @param password of the user
 	 * @return a user object containing the user's info
-	 * @throws Exception if the operation in the database was unsuccessful such as when the login or
-	 * password is include
+	 * @throws LoginOrPasswordException if the operation in the database was unsuccessful such as 
+	 * when the login or password is include
 	 */
-	public static User login(String login, String password) throws Exception {
+	public static User login(String login, String password) throws LoginOrPasswordException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -125,8 +129,10 @@ public class UserDAO extends DAO {
 				user.setPoints(Integer.parseInt(rs.getString("points")));
 				return user;
 			} else {
-				throw new Exception("Login/Password incorrect");
+				throw new LoginOrPasswordException ("Login/Password incorrect");
 			} // if
+		} catch (SQLException e) {
+			throw new LoginOrPasswordException ("Login/Password incorrect");
 		} // try-catch
 	} // login(...)
 	
@@ -134,10 +140,10 @@ public class UserDAO extends DAO {
 	 * Method responsible for registering a new user to the database
 	 * 
 	 * @param user object with all information contained in it
-	 * @throws Exception if the operation on the database was unsuccessful such as when the login is
-	 * already registered
+	 * @throws UserAlreadyExistsException if the operation on the database was unsuccessful such as
+	 * when the login is already registered
 	 */
-	public static void register(User user) throws Exception {
+	public static void register(User user) throws UserAlreadyExistsException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			String sql = "INSERT INTO users(email, login, name, password, points) "
@@ -152,9 +158,9 @@ public class UserDAO extends DAO {
 			stm.executeUpdate();
 			
 		} catch (SQLException e) {
-			throw new Exception("This login is already registered!");
+			throw new UserAlreadyExistsException("This login is already registered!");
 		} // try-catch block
-	} // register(...)
+	} // register()
 	
 	/**
 	 * Method that resets all users in the database

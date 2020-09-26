@@ -8,7 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
+
 import piza.otavio.cambadaforum.DAOLogger;
+import piza.otavio.cambadaforum.exceptions.LoginOrPasswordException;
 
 /**
  * Servlet responsible for doing the login of an user
@@ -33,6 +36,7 @@ public class ServletDoLogin extends HttpServlet {
 			UserDAO.login(request.getParameter("password"), request.getParameter("password"));
 			User user = UserDAO.login(request.getParameter("login"), 
 					request.getParameter("password"));
+			
 			request.getSession().setAttribute("email", user.getEmail());
 			request.getSession().setAttribute("login", user.getLogin());
 			request.getSession().setAttribute("name", user.getName());
@@ -41,9 +45,9 @@ public class ServletDoLogin extends HttpServlet {
 			DAOLogger.log(2, request.getParameter("login"));
 			response.sendRedirect("main");
 			
-		} catch (Exception e) {
+		} catch (LoginOrPasswordException e) {
 			DAOLogger.log(3, request.getParameter("login"));
 			response.sendRedirect("login?status=" + e.getMessage());
 		} // try-catch block
-	} // doPost(...)
+	} // doPost()
 } // ServletDoLogin

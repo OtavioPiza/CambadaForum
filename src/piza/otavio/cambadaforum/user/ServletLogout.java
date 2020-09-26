@@ -23,12 +23,13 @@ public class ServletLogout extends HttpServlet {
 	 * @throws IO & ServletException if the operation is unsuccessful
 	 */
 	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException {
 		request.getSession().setAttribute("email", "");
 		request.getSession().setAttribute("login", "");
 		request.getSession().setAttribute("name", "");
 		request.getSession().setAttribute("points", "");
 		request.getSession().setAttribute("loged", "false");
 		response.sendRedirect("login?status=Log out successful");
-	} // doGet(...)
+	} // doGet()
 } // ServletLogout

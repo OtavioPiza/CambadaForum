@@ -60,7 +60,7 @@ public class User {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
-	} // setEmail(...)
+	} // setEmail()
 	
 	/**
 	 * Sets the login of the user
@@ -69,7 +69,7 @@ public class User {
 	 */
 	public void setLogin(String login) {
 		this.login = login;
-	} // setLogin(...)
+	} // setLogin()
 	
 	/**
 	 * Sets the name of the user
@@ -78,7 +78,7 @@ public class User {
 	 */
 	public void setName(String name) {
 		this.name = name;
-	} // setName(...)
+	} // setName()
 	
 	/**
 	 * Sets the password of the user
@@ -87,7 +87,7 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	} // setPassword(...)
+	} // setPassword()
 	
 	/**
 	 * Sets the points of the user
@@ -96,7 +96,7 @@ public class User {
 	 */
 	public void setPoints(int points) {
 		this.points = points;
-	} // setPoints(...)
+	} // setPoints()
 	
 	
 	// Methods
@@ -107,5 +107,5 @@ public class User {
 	 */
 	public void addPoints(int points) {
 		this.points += points;
-	} // addPoints(...)
+	} // addPoints()
 } // User

@@ -9,7 +9,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
+
 import piza.otavio.cambadaforum.DAOLogger;
+import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
 
 /**
  * Servlet responsible for getting the top ten users by points
@@ -35,12 +38,12 @@ public class ServletRanking extends HttpServlet {
 			ranking = UserDAO.getUserRanking();
 			request.setAttribute("ranking", ranking);
 			
-		} catch (Exception e) {
+		} catch (UserNotFoundException e) {
 			DAOLogger.log(13, (String) request.getSession().getAttribute("login"));
 			request.setAttribute("rankingError", e.getMessage());
 			
 		} finally {
 			request.getRequestDispatcher("ranking.jsp").forward(request, response);
 		} // try-catch
-	} // doGet(...)
+	} // doGet()
 } // ServletRanking
