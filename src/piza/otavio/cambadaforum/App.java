@@ -56,7 +56,7 @@ public class App {
 					System.out.println("Here are the commands available to you:\n");
 					
 					for (AppCommands i : commands) {
-						System.out.printf("%-10s | %s%n",
+						System.out.printf("%-20s | %s%n",
 								i.getCommand(), i.getDescription());
 					}
 					System.out.println();
@@ -67,19 +67,16 @@ public class App {
 							+ "Are you sure you want to proceed? (y/n)");
 					
 					if (sc.nextLine().contentEquals("y")) {
-						System.out.print("Type the database's user's password to proceed: ");
-						
-						if (sc.nextLine().contentEquals(DAO.sqlPassword)) {
-							DAO.setUp();
-							System.out.println("Done!\n");
-							
-						} else {
-							System.out.println("You entered and invalid password");
-						} // End if
+						System.out.println("Done!\n");
 					} // End if
 					
 					break;
 				
+				case "createTables":
+					DAO.createTables();
+					System.out.println("Done!");
+					break;
+					
 				case "quit":
 					keepRunning = false;
 					break;

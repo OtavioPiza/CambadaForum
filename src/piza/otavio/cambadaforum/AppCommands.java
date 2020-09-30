@@ -10,7 +10,8 @@ public enum AppCommands {
 	CONFIGUREDATABASE("config", "configures the postgresql database"),
 	HELP("help", "displays all available commands"),
 	QUIT("quit", "closes the program"),
-	RESETDATABASE("reset", "resets the postgresql database");
+	RESETDATABASE("reset", "resets the postgresql database"),
+	CREATETABLES("createTables", "creates the necessary tables on the PostgreSQL server");
 	
 	private String command;		// Stores the command to use the functionality
 	private String description;	// Stores the functionality description
