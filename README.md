@@ -27,3 +27,14 @@ Albeit there are many ways to install the project, the following is by far the e
 - postgreSQL: https://jdbc.postgresql.org/download.html
 
 ### Process
+1. Install Eclipse making sure to choose the enterprise edition.
+2. Install TomCat 9.
+3. Install PostgreSQL (take note of your user and password)
+4. Clone the repository and open it as a project on Eclipse.
+5. Find 'postgresql-42.2.14.jar' under Libraries and add it to the TomCat 9 lib folder
+6. Create a new TomCat 9 server in Eclipse, ensuring its ports are properly configured
+
+### Setting up the web forum
+1. To configure the database, just run App.java
+2. First execute 'createTables'
+3. Then, using the information from the PostgreSQL installation, 'execute config'
