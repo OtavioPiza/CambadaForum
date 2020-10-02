@@ -44,6 +44,6 @@ public class ServletRanking extends HttpServlet {
 			
 		} finally {
 			request.getRequestDispatcher("ranking.jsp").forward(request, response);
-		} // try-catch
-	} // doGet()
-} // ServletRanking
+		}
+	}
+}

@@ -48,6 +48,6 @@ public class ServletDoLogin extends HttpServlet {
 		} catch (LoginOrPasswordException e) {
 			DAOLogger.log(3, request.getParameter("login"));
 			response.sendRedirect("login?status=" + e.getMessage());
-		} // try-catch block
-	} // doPost()
-} // ServletDoLogin
+		}
+	}
+}

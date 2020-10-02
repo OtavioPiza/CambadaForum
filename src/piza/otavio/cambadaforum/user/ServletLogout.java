@@ -31,5 +31,5 @@ public class ServletLogout extends HttpServlet {
 		request.getSession().setAttribute("points", "");
 		request.getSession().setAttribute("loged", "false");
 		response.sendRedirect("login?status=Log out successful");
-	} // doGet()
-} // ServletLogout
+	}
+}

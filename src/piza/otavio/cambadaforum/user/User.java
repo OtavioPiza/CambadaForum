@@ -15,7 +15,7 @@ public class User {
 	 */
 	public String getEmail() {
 		return email;
-	} // getEmail()
+	}
 	
 	/**
 	 * Gets the login of the user
@@ -24,7 +24,7 @@ public class User {
 	 */
 	public String getLogin() {
 		return login;
-	} // getLogin()
+	}
 	
 	/**
 	 * Gets the name of the user
@@ -33,7 +33,7 @@ public class User {
 	 */
 	public String getName() {
 		return name;
-	} // getName()
+	}
 	
 	/**
 	 * Gets the user password
@@ -42,7 +42,7 @@ public class User {
 	 */
 	public String getPassword() {
 		return password;
-	} // getPassword()
+	}
 	
 	/**
 	 * Gets the points of the user
@@ -51,7 +51,7 @@ public class User {
 	 */
 	public int getPoints() {
 		return points;
-	} // getPoints()
+	}
 	
 	/**
 	 * Sets the email of the user
@@ -60,7 +60,7 @@ public class User {
 	 */
 	public void setEmail(String email) {
 		this.email = email;
-	} // setEmail()
+	}
 	
 	/**
 	 * Sets the login of the user
@@ -69,7 +69,7 @@ public class User {
 	 */
 	public void setLogin(String login) {
 		this.login = login;
-	} // setLogin()
+	}
 	
 	/**
 	 * Sets the name of the user
@@ -78,7 +78,7 @@ public class User {
 	 */
 	public void setName(String name) {
 		this.name = name;
-	} // setName()
+	}
 	
 	/**
 	 * Sets the password of the user
@@ -87,7 +87,7 @@ public class User {
 	 */
 	public void setPassword(String password) {
 		this.password = password;
-	} // setPassword()
+	}
 	
 	/**
 	 * Sets the points of the user
@@ -96,7 +96,7 @@ public class User {
 	 */
 	public void setPoints(int points) {
 		this.points = points;
-	} // setPoints()
+	}
 	
 	
 	// Methods
@@ -107,5 +107,5 @@ public class User {
 	 */
 	public void addPoints(int points) {
 		this.points += points;
-	} // addPoints()
-} // User
+	}
+}

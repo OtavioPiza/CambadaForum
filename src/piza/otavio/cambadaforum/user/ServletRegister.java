@@ -50,6 +50,6 @@ public class ServletRegister extends HttpServlet {
 		} catch (UserAlreadyExistsException e) {
 			DAOLogger.log(1, request.getParameter("login"));
 			response.sendRedirect("register?status=" + e.getMessage());
-		} // try-catch block
-	} // doPost()
-} // ServletRegister
+		}
+	}
+}
