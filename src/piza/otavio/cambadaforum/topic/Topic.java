@@ -20,7 +20,7 @@ public class Topic {
 	 */
 	public String getTitle() {
 		return title;
-	} // getTitle()
+	}
 	
 	/**
 	 * Gets the topic's content
@@ -29,7 +29,7 @@ public class Topic {
 	 */
 	public String getContent() {
 		return content;
-	} // getContent()
+	}
 	
 	/**
 	 * Gets the topic's id
@@ -38,7 +38,7 @@ public class Topic {
 	 */
 	public int getId() {
 		return id;
-	} // getId()
+	}
 	
 	/**
 	 * Gets the topic's author's login
@@ -47,7 +47,7 @@ public class Topic {
 	 */
 	public String getLogin() {
 		return login;
-	} // getLogin()
+	}
 	
 	/**
 	 * Gets the topic's information and puts it into a String[]
@@ -56,7 +56,7 @@ public class Topic {
 	 */
 	public String[] getString() {
 		return new String[] {title, content, login, Integer.toString(id)};
-	} // getString()
+	}
 	
 	/**
 	 * Sets the topic's title
@@ -65,7 +65,7 @@ public class Topic {
 	 */
 	public void setTitle(String title) {
 		this.title = title;
-	} // setTitle(...)
+	}
 	
 	/**
 	 * Sets the topic's content
@@ -74,7 +74,7 @@ public class Topic {
 	 */
 	public void setContent(String content) {
 		this.content = content;
-	} // setContent(...)
+	}
 	
 	/**
 	 * Sets the topic's id
@@ -83,7 +83,7 @@ public class Topic {
 	 */
 	public void setId(int id) {
 		this.id = id;
-	} // setId(...)
+	}
 	
 	/**
 	 * Sets the topic's author's login
@@ -92,7 +92,7 @@ public class Topic {
 	 */
 	public void setLogin(String login) {
 		this.login = login;
-	} // setLogin(...)
+	}
 	
 	
 	// Methods //
@@ -104,5 +104,5 @@ public class Topic {
 	 */
 	public boolean isOwner(String login) {
 		return login.contentEquals(this.login);
-	} // isOwner(...)
-} // Topic
+	}
+}

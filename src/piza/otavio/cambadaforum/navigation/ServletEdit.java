@@ -56,6 +56,6 @@ public class ServletEdit extends HttpServlet {
 		
 		} finally {
 			request.getRequestDispatcher("edit_topic.jsp").forward(request, response);
-		} // try-catch block
-	} // doGet()
-} // ServletEdit
+		}
+	}
+}

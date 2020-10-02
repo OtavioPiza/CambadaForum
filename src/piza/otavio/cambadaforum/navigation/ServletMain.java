@@ -24,7 +24,7 @@ import piza.otavio.cambadaforum.user.UserDAO;
 @WebServlet("/main")
 public class ServletMain extends HttpServlet {
 	private static final long serialVersionUID = 1L; // Version UID
-       
+
 	/**
 	 * Get method that displays the main page of a user
 	 * 
@@ -41,7 +41,7 @@ public class ServletMain extends HttpServlet {
 			
 		} catch (Exception e1) {
 			e1.printStackTrace();
-		} // End try-catch block
+		}
 		
 		try {
 			List<String[]> userTopics = new ArrayList<>();
@@ -55,6 +55,6 @@ public class ServletMain extends HttpServlet {
 			
 		}finally {
 			request.getRequestDispatcher("main.jsp").forward(request, response);
-		} // try-catch block
-	} // doGet()
-} // ServletMain
+		}
+	}
+}

@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/register")
 public class ServletRegister extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-      
+
 	/**
 	 * Get method that displays the resgiter.jsp file to the user
 	 * 
@@ -27,5 +27,5 @@ public class ServletRegister extends HttpServlet {
 			throws ServletException, IOException {
 		request.setAttribute("status", request.getParameter("status"));
 		request.getRequestDispatcher("register.jsp").forward(request, response);
-	} // doGet()
-} // ServletRegister
+	}
+}

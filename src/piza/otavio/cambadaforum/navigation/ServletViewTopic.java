@@ -25,7 +25,7 @@ import piza.otavio.cambadaforum.user.UserDAO;
 @WebServlet("/view_topic")
 public class ServletViewTopic extends HttpServlet {
 	private static final long serialVersionUID = 1L; // Version UID
-       
+
 	/**
 	 * Get method that displays the view_topic.jsp file to the user, in which one can view the topic
 	 * itself, the topic's comments, and a text box where one can post new comments
@@ -46,7 +46,7 @@ public class ServletViewTopic extends HttpServlet {
 			
 		} catch (Exception e1) {
 			DAOLogger.log(15, (String) request.getSession().getAttribute("login"));
-		} // try-catch block
+		}
 		
 		/**
 		 * Section responsible for getting the topic's content
@@ -62,7 +62,7 @@ public class ServletViewTopic extends HttpServlet {
 			
 		} catch (Exception e) {
 			request.setAttribute("topicError", e.getMessage());
-		} // try-catch block
+		}
 		
 		
 		/**
@@ -81,6 +81,6 @@ public class ServletViewTopic extends HttpServlet {
 			
 		} finally {
 			request.getRequestDispatcher("view_topic.jsp").forward(request, response);
-		} // try-catch block
-	} // doGet()
-} // ServletViewTopic
+		}
+	}
+}
