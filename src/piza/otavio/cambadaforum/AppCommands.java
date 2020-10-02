@@ -25,19 +25,19 @@ public enum AppCommands {
 	AppCommands(String command, String description) {
 		this.command = command;
 		this.description = description;
-	} // AppCommands
+	}
 	
 	/**
 	 * @return command
 	 */
 	public String getCommand() {
 		return command;
-	} // getCommand()
+	}
 	
 	/**
 	 * @return command functionality description
 	 */
 	public String getDescription() {
 		return description;
-	} // getDescription() 
-} // AppCommands
+	}
+}

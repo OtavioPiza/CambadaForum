@@ -68,7 +68,7 @@ public class App {
 					
 					if (sc.nextLine().contentEquals("y")) {
 						System.out.println("Done!\n");
-					} // End if
+					}
 					
 					break;
 				
@@ -84,9 +84,9 @@ public class App {
 				default:
 					System.out.printf("No such command: %s! Please try again%n", command);
 					break;
-				} // End switch
-			} // End while
+				}
+			}
 			System.out.println("Program ended");
-		} // End try-with resources
-	} // End main
-} // App
+		}
+	}
+}
