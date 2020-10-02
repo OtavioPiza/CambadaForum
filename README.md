@@ -15,7 +15,7 @@ Current functionality includes:
 - Viewing the user ranking based on activity
 
 Currently, I am working on:
-- Impementing custom exceptions
+- Implementing custom exceptions
 - Stylizing the forum
 - Adding the possibility to befriend users
 
