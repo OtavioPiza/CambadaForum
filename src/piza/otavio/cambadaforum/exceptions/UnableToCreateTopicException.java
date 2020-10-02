@@ -16,5 +16,5 @@ public class UnableToCreateTopicException extends CambadaForumException {
 	 */
 	public UnableToCreateTopicException(String message) {
 		super(message);
-	} // UnableToCreateTopicException()
-} // UnableToCreateTopicException
+	}
+}

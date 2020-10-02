@@ -16,5 +16,5 @@ public class UnableToGetTopicException extends CambadaForumException {
 	 */
 	public UnableToGetTopicException(String message) {
 		super(message);
-	} // UnableToGetTopicException()
-} // UnableToGetTopicException
+	}
+}

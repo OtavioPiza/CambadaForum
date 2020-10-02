@@ -16,5 +16,5 @@ public class UnableToGetUsersException extends CambadaForumException {
 	 */
 	public UnableToGetUsersException(String message) {
 		super(message);
-	} // UnableToGetUsersException()
-} // UnableToGetUsersException
+	}
+}

@@ -17,7 +17,7 @@ public class CambadaForumException extends Exception{
 	 */
 	CambadaForumException(String message) {
 		this.message = message;
-	} // CambadaForumException()
+	}
 	
 	/**
 	 * Gets the message from the exception
@@ -27,5 +27,5 @@ public class CambadaForumException extends Exception{
 	@Override
 	public String getMessage() {
 		return message;
-	} // getMessage()
-} // CambadaForumException
+	}
+}

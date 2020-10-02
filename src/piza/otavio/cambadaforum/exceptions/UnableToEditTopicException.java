@@ -16,5 +16,5 @@ public class UnableToEditTopicException extends CambadaForumException {
 	 */
 	public UnableToEditTopicException(String message) {
 		super(message);
-	} // UnableToEditTopicException()
-} // UnableToEditTopicException
+	}
+}

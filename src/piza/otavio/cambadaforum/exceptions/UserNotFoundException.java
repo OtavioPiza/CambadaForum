@@ -16,5 +16,5 @@ public class UserNotFoundException extends CambadaForumException {
 	 */
 	public UserNotFoundException(String message) {
 		super(message);
-	} // UserNotFoundException()
-} // UserNotFoundException
+	}
+}
