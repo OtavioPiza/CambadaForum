@@ -18,7 +18,7 @@ import piza.otavio.cambadaforum.DAOLogger;
 @WebServlet("/write_comment")
 public class ServletWriteComment extends HttpServlet {
 	private static final long serialVersionUID = 1L; // Version UID
-       
+
 	/**
 	 * Post method that adds a new comment to a topic in the database
 	 * 
@@ -46,6 +46,6 @@ public class ServletWriteComment extends HttpServlet {
 		} finally {
 			response.sendRedirect("/CambadaForum/view_topic?topic_id="
 					+ request.getParameter("topic_id") + status);
-		} // try-catch block
-	} // doPost()
-} // ServletWriteComment
+		}
+	}
+}

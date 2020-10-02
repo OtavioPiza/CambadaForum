@@ -19,7 +19,7 @@ public class Comment {
 	 */
 	public String getContent() {
 		return content;
-	} // getContent()
+	}
 	
 	/**
 	 * Gets the comment's author's login
@@ -28,7 +28,7 @@ public class Comment {
 	 */
 	public String getLogin() {
 		return login;
-	} // getLogin()
+	}
 	
 	/**
 	 * Gets the comment's topic id
@@ -37,7 +37,7 @@ public class Comment {
 	 */
 	public int getTopicId() {
 		return topicId;
-	} // getTopicId()
+	}
 	
 	/**
 	 * Gets the comment's information and returns it in a String[]
@@ -46,7 +46,7 @@ public class Comment {
 	 */
 	public String[] getString() {
 		return new String[] {content, login};
-	} // getString()
+	}
 	
 	/**
 	 * Sets the comment's content
@@ -55,7 +55,7 @@ public class Comment {
 	 */
 	public void setContent(String content) {
 		this.content = content;
-	} // setContent(...)
+	}
 	
 	/**
 	 * Sets the comment's author's login
@@ -64,7 +64,7 @@ public class Comment {
 	 */
 	public void setLogin(String login) {
 		this.login = login;
-	} // setLogin(...)
+	}
 	
 	/**
 	 * Sets the comment's topic id
@@ -73,5 +73,5 @@ public class Comment {
 	 */
 	public void setTopicId(int topicId) {
 		this.topicId = topicId;
-	} // setTopicId(...)
-} // Comment
+	}
+}
