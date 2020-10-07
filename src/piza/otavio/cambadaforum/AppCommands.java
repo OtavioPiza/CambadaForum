@@ -28,7 +28,7 @@ public enum AppCommands {
 	}
 	
 	/**
-	 * @return command
+	 * @return command 
 	 */
 	public String getCommand() {
 		return command;

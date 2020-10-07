@@ -14,10 +14,9 @@ import java.time.format.DateTimeFormatter;
  * @version 2020-09-20
  */
 public class DAOLogger {
-	
-	private static String filePath = "C:/Users/otavi/Desktop/database_log.txt"; // Path to the database log
-	// Date format template  
-	private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss"); 
+	private static final DateTimeFormatter DTF = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+	private static String filePath = "C:/Users/otavi/Desktop/database_log.txt";	// Path to the 
+	// database log Date format template  
 	
 	/**
 	 * Set the path where the log is going to be saved
@@ -41,7 +40,7 @@ public class DAOLogger {
 	 * @param id from the user that tried to perform the operation
 	 */
 	private static String interpret(int code, String id) {
-		StringBuilder sb = new StringBuilder(); // String that contains the interpreted message
+		StringBuilder sb = new StringBuilder();	// String that contains the interpreted message
 		
 		sb.append("\n-=-=-= ").append(DTF.format(LocalDateTime.now())).append(" =-=-=-");
 		sb.append('\n').append((code % 2 == 0) ? "Successful" : "Failed").append(" attempt to ");
@@ -105,8 +104,8 @@ public class DAOLogger {
 	 * @param message to be logged in a system file
 	 */
 	private static void write(String message) {
-		File log = new File(filePath); // File for the database log
-		boolean isNew = false;         // Stores if the file created is a new or an old one
+		File log = new File(filePath);	// File for the database log
+		boolean isNew = false;			// Stores if the file created is a new or an old one
 		
 		try {
 			if (!log.exists()) {

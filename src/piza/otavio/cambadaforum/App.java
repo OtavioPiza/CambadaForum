@@ -86,7 +86,7 @@ public class App {
 					break;
 				}
 			}
-			System.out.println("Program ended");
+			System.out.println("Program ended!");
 		}
 	}
 }

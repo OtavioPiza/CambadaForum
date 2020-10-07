@@ -7,7 +7,7 @@ package piza.otavio.cambadaforum.exceptions;
  * @version 2020-09-21
  */
 public class UnableToGetTopicException extends CambadaForumException {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 	
 	/**
 	 * Constructor that allows for the user to add a message to the exception

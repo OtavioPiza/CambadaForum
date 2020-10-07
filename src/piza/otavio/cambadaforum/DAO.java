@@ -17,9 +17,9 @@ import piza.otavio.cambadaforum.user.UserDAO;
  */
 public class DAO {
 
-	protected static String sqlUser = "postgres"; 				     // postgreSQL's user
-	protected static String sqlPassword = "admin"; 				     // postgreSQL's user's password
-	protected static String sqlUrl = "jdbc:postgresql:CambadaForum"; // postgreSQL's server URL
+	protected static String sqlUser = "postgres"; 						// user
+	protected static String sqlPassword = "admin"; 						// user's password
+	protected static String sqlUrl = "jdbc:postgresql:CambadaForum";	// server URL
 
 	/**
 	 * Protected class constructor to hide the implicit public one
