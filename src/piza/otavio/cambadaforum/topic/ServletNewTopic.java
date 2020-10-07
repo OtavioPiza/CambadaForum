@@ -8,7 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
+
 import piza.otavio.cambadaforum.DAOLogger;
+import piza.otavio.cambadaforum.exceptions.UnableToCreateTopicException;
+import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
 
 /**
  * Servlet responsible for creating a new topic in the database
@@ -40,10 +44,13 @@ public class ServletNewTopic extends HttpServlet {
 			response.sendRedirect("/CambadaForum/main?status=Topic+created+successfully");
 			DAOLogger.log(4, (String) request.getSession().getAttribute("login"));
 			
-		} catch (Exception e) {
+		} catch (UnableToCreateTopicException e) {
 			DAOLogger.log(5, (String) request.getSession().getAttribute("login"));
 			request.setAttribute("newTopicError", e.getMessage());
 			request.getRequestDispatcher("new_topic.jsp").forward(request, response);
+		
+		} catch (UserNotFoundException e) {
+			response.sendRedirect("login?status=" + e.getMessage());
 		}
 	}
 }

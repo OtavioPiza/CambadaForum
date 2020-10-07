@@ -39,7 +39,7 @@ public class ServletEdit extends HttpServlet {
 		try {
 			// Stores the topic id
 			Topic topic = TopicDAO.getTopic(Integer.parseInt(request.getParameter("topic_id"))); 
-			List<String> topicString = new ArrayList<>(); // Strings of the topic content
+			List<String> topicString = new ArrayList<>();	// Strings of the topic content
 			
 			topicString.add(topic.getTitle());
 			topicString.add(topic.getContent());

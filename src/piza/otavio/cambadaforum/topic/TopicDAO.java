@@ -9,6 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import piza.otavio.cambadaforum.DAO;
+import piza.otavio.cambadaforum.exceptions.UnableToCreateTopicException;
+import piza.otavio.cambadaforum.exceptions.UnableToEditTopicException;
+import piza.otavio.cambadaforum.exceptions.UnableToGetTopicException;
+import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
 import piza.otavio.cambadaforum.user.UserDAO;
 
 /**
@@ -24,9 +28,11 @@ public class TopicDAO extends DAO {
 	 * Method responsible for creating a topic in the database
 	 * 
 	 * @param Topic object
+	 * @throws UserNotFoundException
 	 * @throws Exception if the operation on the database was unsuccessful
 	 */
-	public static void createTopic(Topic topic) throws Exception {
+	public static void createTopic(Topic topic) throws UnableToCreateTopicException,
+			UserNotFoundException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -39,8 +45,8 @@ public class TopicDAO extends DAO {
 			
 			UserDAO.addPoints(topic.getLogin(), 30);
 			
-		} catch (Exception e) {
-			throw new Exception("Unable to create new topic!");
+		} catch (SQLException e) {
+			throw new UnableToCreateTopicException("Unable to create new topic!");
 		}
 	}
 
@@ -50,7 +56,7 @@ public class TopicDAO extends DAO {
 	 * @param Topic object
 	 * @throws Exception if the operation on the database was unsuccessful 
 	 */
-	public static void editTopic(Topic topic) throws Exception {
+	public static void editTopic(Topic topic) throws UnableToEditTopicException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -60,7 +66,7 @@ public class TopicDAO extends DAO {
 			stm.executeUpdate();
 			
 		} catch (SQLException e) {
-			throw new Exception("Unable to edit topic!");
+			throw new UnableToEditTopicException("Unable to edit topic!");
 		}
 	}
 	
@@ -71,7 +77,7 @@ public class TopicDAO extends DAO {
 	 * @return the topic's content in a Topic object
 	 * @throws Exception if the operation on the database was unsuccessful 
 	 */
-	public static Topic getTopic(int id) throws Exception {
+	public static Topic getTopic(int id) throws UnableToGetTopicException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -88,8 +94,8 @@ public class TopicDAO extends DAO {
 
 			return topic;
 			
-		} catch (Exception e) {
-			throw new Exception("Unable to get topic!");
+		} catch (SQLException e) {
+			throw new UnableToGetTopicException("Unable to get topic!");
 		}
 	}
 	
@@ -100,7 +106,7 @@ public class TopicDAO extends DAO {
 	 * @throws Exception if TopicDAO was unable to obtain the list of topic objects from the
 	 * database
 	 */
-	public static List<Topic> getTopics() throws Exception {
+	public static List<Topic> getTopics() throws UnableToGetTopicException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -118,8 +124,8 @@ public class TopicDAO extends DAO {
 			}
 			return topics;
 			
-		} catch (Exception e) {
-			throw new Exception("Unable to get forum's topics!");
+		} catch (SQLException e) {
+			throw new UnableToGetTopicException("Unable to get forum's topics!");
 		}
 	}
 	
@@ -130,7 +136,7 @@ public class TopicDAO extends DAO {
 	 * @return a list of all topics of a given users
 	 * @throws Exception if the operation on the database was unsuccessful 
 	 */
-	public static List<Topic> getUserTopics(String login) throws Exception {
+	public static List<Topic> getUserTopics(String login) throws UnableToGetTopicException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -149,8 +155,8 @@ public class TopicDAO extends DAO {
 			}
 			return userTopics;
 			
-		} catch (Exception e) {
-			throw new Exception("Unable to get user's topics!");
+		} catch (SQLException e) {
+			throw new UnableToGetTopicException("Unable to get user's topics!");
 		}
 	}
 	

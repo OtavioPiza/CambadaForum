@@ -40,7 +40,7 @@ public class UserDAO extends DAO {
 			stm.executeUpdate();
 			
 		} catch (SQLException e) {
-			throw new UserNotFoundException("User not found");
+			throw new UserNotFoundException("User not found try to log-in again");
 		}
 	}
 	
