@@ -19,7 +19,7 @@ public class DAO {
 
 	protected static String sqlUser = "postgres"; 						// user
 	protected static String sqlPassword = "admin"; 						// user's password
-	protected static String sqlUrl = "jdbc:postgresql:CambadaForum";	// server URL
+	protected static String sqlUrl = "jdbc:postgresql:WebForum";		// server URL
 
 	/**
 	 * Protected class constructor to hide the implicit public one
