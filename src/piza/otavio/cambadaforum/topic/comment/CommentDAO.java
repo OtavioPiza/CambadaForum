@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import piza.otavio.cambadaforum.DAO;
+import piza.otavio.cambadaforum.exceptions.UnableToGetCommentException;
+import piza.otavio.cambadaforum.exceptions.UnableToWriteCommentException;
+import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
 import piza.otavio.cambadaforum.user.UserDAO;
 
 /**
@@ -24,9 +27,11 @@ public class CommentDAO extends DAO {
 	 * Method responsible for creating a comment 
 	 * 
 	 * @param Comment object
+	 * @throws UserNotFoundException 
 	 * @throws Exception if the operation on the database was unsuccessful
 	 */
-	public static void createComment(Comment comment) throws Exception {
+	public static void createComment(Comment comment) throws UnableToWriteCommentException,
+			UserNotFoundException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -40,8 +45,8 @@ public class CommentDAO extends DAO {
 			
 			UserDAO.addPoints(comment.getLogin(), 10);
 			
-		} catch (Exception e) {
-			throw new Exception("Unable to write comment");
+		} catch (SQLException e) {
+			throw new UnableToWriteCommentException("Unable to write comment");
 		}
 	}
 	
@@ -52,7 +57,7 @@ public class CommentDAO extends DAO {
 	 * @return a list of Comment objects 
 	 * @throws Exception id the operation on the database was unsuccessful
 	 */
-	public static List<Comment> getComments(String topicId) throws Exception {
+	public static List<Comment> getComments(String topicId) throws UnableToGetCommentException {
 		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			PreparedStatement stm = c.prepareStatement(
@@ -69,8 +74,8 @@ public class CommentDAO extends DAO {
 			}
 			return comments;
 			
-		} catch (Exception e) {
-			throw new Exception("Unable to get topic's comments!");
+		} catch (SQLException e) {
+			throw new UnableToGetCommentException("Unable to get topic's comments!");
 		}
 	}
 	

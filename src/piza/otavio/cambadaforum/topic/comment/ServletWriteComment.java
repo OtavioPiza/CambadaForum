@@ -1,13 +1,18 @@
 package piza.otavio.cambadaforum.topic.comment;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
+
 import piza.otavio.cambadaforum.DAOLogger;
+import piza.otavio.cambadaforum.exceptions.UnableToWriteCommentException;
+import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
 
 /**
  * Servlet responsible for creating a new comment in the database
@@ -39,9 +44,12 @@ public class ServletWriteComment extends HttpServlet {
 			status = "&status=Comment+added+successfully";
 			DAOLogger.log(6, (String) request.getSession().getAttribute("login"));
 			
-		} catch (Exception e) {
+		} catch (UnableToWriteCommentException e) {
 			request.setAttribute("commentsError", e.getMessage());
 			DAOLogger.log(7, (String) request.getSession().getAttribute("login"));
+			
+		} catch (UserNotFoundException e) {
+			response.sendRedirect("login?status=" + e.getMessage());
 			
 		} finally {
 			response.sendRedirect("/CambadaForum/view_topic?topic_id="
