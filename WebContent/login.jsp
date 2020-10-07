@@ -38,8 +38,10 @@
 
 				<form method="post" action="do_login" id="do_login">
 
-					<label for="login">Login</label> <input name="login" id="login"
-						required> <br> <label for="password">Password</label>
+					<label for="login">Login</label>
+					<input name="login" id="login" type="text" required> 
+					<br> 
+					<label for="password">Password</label>
 					<input name="password" id="password" type="password" required>
 
 				</form>

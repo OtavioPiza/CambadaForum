@@ -33,7 +33,7 @@ public class ServletDoLogin extends HttpServlet {
 			throws ServletException, IOException {
 		
 		try {
-			UserDAO.login(request.getParameter("password"), request.getParameter("password"));
+			UserDAO.login(request.getParameter("login"), request.getParameter("password"));
 			User user = UserDAO.login(request.getParameter("login"), 
 					request.getParameter("password"));
 			
