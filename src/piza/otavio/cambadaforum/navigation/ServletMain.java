@@ -23,7 +23,7 @@ import piza.otavio.cambadaforum.user.UserDAO;
  */
 @WebServlet("/main")
 public class ServletMain extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Get method that displays the main page of a user
@@ -33,7 +33,7 @@ public class ServletMain extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		User user = null; // Stores the user's information
+		User user;	// Stores the user's information
 		
 		try {
 			user = UserDAO.getUser((String) request.getSession().getAttribute("login"));

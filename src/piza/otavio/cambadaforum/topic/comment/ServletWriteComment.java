@@ -17,7 +17,7 @@ import piza.otavio.cambadaforum.DAOLogger;
  */
 @WebServlet("/write_comment")
 public class ServletWriteComment extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Post method that adds a new comment to a topic in the database
@@ -27,8 +27,8 @@ public class ServletWriteComment extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		String status = "&status=";       // Records the status of the operation
-		Comment comment = new Comment();  // Stores the comment and its author
+		String status = "&status=";			// Records the status of the operation
+		Comment comment = new Comment();	// Stores the comment and its author
 		
 		comment.setLogin((String) request.getSession().getAttribute("login"));
 		comment.setContent(request.getParameter("comment_content"));

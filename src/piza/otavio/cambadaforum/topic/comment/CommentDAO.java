@@ -21,7 +21,7 @@ import piza.otavio.cambadaforum.user.UserDAO;
 public class CommentDAO extends DAO {
 	
 	/**
-	 * Method responsible for creating a comment
+	 * Method responsible for creating a comment 
 	 * 
 	 * @param Comment object
 	 * @throws Exception if the operation on the database was unsuccessful

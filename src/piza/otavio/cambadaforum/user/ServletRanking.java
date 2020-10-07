@@ -22,7 +22,7 @@ import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
  */
 @WebServlet("/ranking")
 public class ServletRanking extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Get method that gets the top ten users by points
@@ -32,7 +32,7 @@ public class ServletRanking extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		List<String> ranking; // Stores the top ten users by points
+		List<String> ranking;	// Stores the top ten users by points
 		
 		try {
 			ranking = UserDAO.getUserRanking();

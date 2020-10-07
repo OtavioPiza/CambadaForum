@@ -18,7 +18,7 @@ import piza.otavio.cambadaforum.DAOLogger;
  */
 @WebServlet("/new_topic")
 public class ServletNewTopic extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Post method that adds a new topic to the database
@@ -29,7 +29,7 @@ public class ServletNewTopic extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
-		Topic topic = new Topic(); // Stores the topic's content
+		Topic topic = new Topic();	// Stores the topic's content
 		
 		topic.setContent(request.getParameter("content"));
 		topic.setLogin((String) request.getSession().getAttribute("login"));

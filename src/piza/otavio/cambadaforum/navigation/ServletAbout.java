@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/about")
 public class ServletAbout extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Get method that displays the about.jsp page to the user

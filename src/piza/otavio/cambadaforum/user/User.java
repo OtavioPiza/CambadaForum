@@ -1,11 +1,11 @@
 package piza.otavio.cambadaforum.user;
 
 public class User {
-	private String email;     // User's email
-	private String login;     // User's login
-	private String name;      // User's name
-	private String password;  // User's password
-	private int points = 0;   // User's point
+	private String email;		// User's email
+	private String login;		// User's login
+	private String name;		// User's name
+	private String password;	// User's password
+	private int points = 0;		// User's point
 	
 	// Getters and Setters
 	/**
@@ -97,7 +97,6 @@ public class User {
 	public void setPoints(int points) {
 		this.points = points;
 	}
-	
 	
 	// Methods
 	/**

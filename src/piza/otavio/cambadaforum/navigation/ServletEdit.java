@@ -21,7 +21,7 @@ import piza.otavio.cambadaforum.topic.TopicDAO;
  */
 @WebServlet("/edit")
 public class ServletEdit extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Get method that displays the edit_topic.jsp page to the user if they are the owner of that 
@@ -34,7 +34,7 @@ public class ServletEdit extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		String status = null;         // Stores the status of the topic to be displayed to the user
+		String status;	// Stores the status of the topic to be displayed to the user
 		
 		try {
 			// Stores the topic id

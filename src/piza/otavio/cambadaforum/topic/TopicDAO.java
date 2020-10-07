@@ -65,7 +65,7 @@ public class TopicDAO extends DAO {
 	}
 	
 	/**
-	 * Method responsible for getting a topic's content
+	 * Method responsible for getting a topic's content 
 	 * 
 	 * @param id of the topic
 	 * @return the topic's content in a Topic object

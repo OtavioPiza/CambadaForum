@@ -21,7 +21,7 @@ import piza.otavio.cambadaforum.exceptions.LoginOrPasswordException;
  */
 @WebServlet("/do_login")
 public class ServletDoLogin extends HttpServlet {
-	private static final long serialVersionUID = 1L; // User UID
+	private static final long serialVersionUID = 1L;	// User UID
 
 	/**
 	 * Post method responsible for doing the login of an user

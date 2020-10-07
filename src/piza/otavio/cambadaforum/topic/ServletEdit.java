@@ -17,7 +17,7 @@ import piza.otavio.cambadaforum.DAOLogger;
  */
 @WebServlet("/edit_topic")
 public class ServletEdit extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Post method that edits the topic content in the database
@@ -27,7 +27,7 @@ public class ServletEdit extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
-		Topic topic = new Topic();    // Stores the topic's altered content
+		Topic topic = new Topic();	// Stores the topic's altered content
 		String topicId = (String) request.getSession().getAttribute("edit_topic_id"); // Topic id
 		
 		topic.setId(Integer.parseInt(topicId));

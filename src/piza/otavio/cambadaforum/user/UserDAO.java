@@ -47,7 +47,7 @@ public class UserDAO extends DAO {
 	/**
 	 * Method responsible for getting a user with a given login
 	 * 
-	 * @param login of the user
+	 * @param login of the user 
 	 * @return User object with the given login
 	 * @throws UserNotFoundException if the operation on the database was unsuccessful
 	 */

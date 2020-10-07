@@ -8,8 +8,8 @@ package piza.otavio.cambadaforum.topic;
  */
 public class Topic {
 	private String title;	// Title of the topic
-	private String content; // Body of the topic
-	private String login;   // Login of the author of the topic
+	private String content;	// Body of the topic
+	private String login;	// Login of the author of the topic
 	private int id;			// ID of the topic (created by the SQL server)
 	
 	// Getters & Setters //

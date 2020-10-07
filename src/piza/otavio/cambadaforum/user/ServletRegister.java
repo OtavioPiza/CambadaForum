@@ -21,7 +21,7 @@ import piza.otavio.cambadaforum.exceptions.UserAlreadyExistsException;
  */
 @WebServlet("/RegisterUser")
 public class ServletRegister extends HttpServlet {
-	private static final long serialVersionUID = 1L; // Version UID
+	private static final long serialVersionUID = 1L;	// Version UID
 
 	/**
 	 * Post method that registers a new user
@@ -31,7 +31,7 @@ public class ServletRegister extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		User user = new User(); // Stores the user object to be registered
+		User user = new User();	// Stores the user object to be registered
 
 		try {
 

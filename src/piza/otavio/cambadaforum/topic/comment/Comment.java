@@ -7,9 +7,9 @@ package piza.otavio.cambadaforum.topic.comment;
  * @version September 19th 2020
  */
 public class Comment {
-	private String content; // Comment's content
-	private String login;   // Comment's author's login
-	private int topicId;    // Comment's topic id provided by the PostgreSQL database
+	private String content;	// Comment's content
+	private String login;	// Comment's author's login
+	private int topicId;	// Comment's topic id provided by the PostgreSQL database
 	
 	// Getters and Setters
 	/**
