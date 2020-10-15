@@ -30,7 +30,7 @@ public class UserDAO extends DAO {
 	 * @throws Exception if the operation on the database was unsuccessful
 	 */
 	public static void addPoints(String login, int points) throws UserNotFoundException {
-
+		
 		try(Connection c = DriverManager.getConnection(sqlUrl, sqlUser, sqlPassword)) {
 			
 			PreparedStatement stm = c.prepareStatement(
