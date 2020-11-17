@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.IO;
 
 import piza.otavio.cambadaforum.DAOLogger;
 import piza.otavio.cambadaforum.exceptions.UserNotFoundException;
