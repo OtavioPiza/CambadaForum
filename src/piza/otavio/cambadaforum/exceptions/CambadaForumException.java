@@ -6,7 +6,7 @@ package piza.otavio.cambadaforum.exceptions;
  * @author Otavio Sartorelli de Toledo Piza
  * @version 2020-09-21
  */
-public class CambadaForumException extends Exception{
+public class CambadaForumException extends Exception {
 	private static final long serialVersionUID = 1L; // Serial UID
 	protected final String message;	// Stores exception message
 	
